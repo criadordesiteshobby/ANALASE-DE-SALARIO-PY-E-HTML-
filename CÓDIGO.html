@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Análise de Dados</title>
+</head>
+<body>
+  <h1>ANÁLISE DE DADOS 💰</h1>
+  <p>Informe seu salário:</p>
+  
+  <input type="number" id="salario" placeholder="Digite seu salário">
+  <button onclick="analisar()">Analisar</button>
+  
+  <h2 id="resultado"></h2>
+  
+  <script>
+    function analisar() {
+      const salario = parseFloat(document.getElementById("salario").value);
+      let resultado = "";
+
+      if (salario <= 1500) {
+        resultado = "VOCÊ TEM UM SALÁRIO NORMAL, NÃO TEM COM O QUE SE PREOCUPAR";
+      } else if (salario > 2000 && salario <= 3000) {
+        resultado = "TÁ PODENDO EM";
+      } else if (salario > 3000 && salario <= 4000) {
+        resultado = "CLASSE ALTA";
+      } else if (salario > 4000 && salario <= 6000) {
+        resultado = "RICO";
+      } else if (salario > 4000 && salario <= 9000) {
+        resultado = "RICO CLASSE POBRE";
+      } else if (salario > 9000 && salario <= 10000) {
+        resultado = "RICO CLASSE BAIXA";
+      } else if (salario > 10000 && salario <= 15000) {
+        resultado = "RICO CLASSE MÉDIA";
+      } else if (salario > 15000 && salario <= 20000) {
+        resultado = "RICO CLASSE ALTA";
+      } else if (salario > 20000 && salario <= 1000000) {
+        resultado = "MILIONÁRIO";
+      } else {
+        resultado = "ELO MUSK?";
+      }
+
+      document.getElementById("resultado").textContent = resultado;
+    }
+  </script>
+</body>
+</html>
